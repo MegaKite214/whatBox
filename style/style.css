@@ -1,0 +1,90 @@
+.container {
+    background-color: #39BE87;
+    width: 100%;
+    height: 100%;
+    color:white;
+    position: fixed;
+}
+
+@font-face {
+    font-family: 'Source Han Sans';
+    src: url('../asset/SourceHanSans.ttc');
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    /* Make sure there are always best sans Chinese fonts*/
+    font-family: "Source Han Sans"/*,*/, sans-serif;
+    user-select: none; 
+}
+
+#drop-container {
+    margin: 20px auto;
+    text-align: center;
+    display: table;
+}
+
+.drop-item{
+    font-size: 24px;
+    font-weight: normal;
+
+    float: none;
+    display: inline-block;
+    margin: 16px;
+
+    color: rgba(255,255,255,0.8);
+}
+
+.svg-circle#compress {
+    background-image: url("../asset/icon/compress.png");
+}
+
+.svg-circle#extract {
+    background-image: url("../asset/icon/extract.png");
+}
+
+.svg-circle#mux {
+    background-image: url("../asset/icon/mux.png");
+}
+
+.svg-circle {
+    width: 130px;
+    height:130px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.svg-circle circle {
+    fill: white;
+    fill-opacity: 0.15;
+    stroke-opacity: 0.8;
+    stroke: white;
+    stroke-width: 2.5px;
+    stroke-dasharray: 10px;
+    cx: 65;
+    cy: 65;
+    r: 64;
+}
+
+.svg-circle circle:hover {
+    stroke-dasharray: 0px;
+    stroke-opacity: 1;
+    animation: fill 80ms linear;
+}
+
+@keyframes fill {
+    from {
+        stroke-dasharray: 10px;
+        stroke-opacity: 0.8;
+    }
+    to {
+        stroke-dasharray: 0px;
+        stroke-opacity: 1;
+    }
+}
+
+

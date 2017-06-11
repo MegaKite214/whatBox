@@ -1,0 +1,29 @@
+{
+  "name": "whatbox",
+  "version": "0.0.1",
+  "description": "Open-Source A/V encoding toolbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegaKite214/whatbox.git"
+  },
+  "keywords": [
+    "audio",
+    "video",
+    "electron",
+    "ffmpeg"
+  ],
+  "author": "MegaKite214",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MegaKite214/whatbox/issues"
+  },
+  "homepage": "https://github.com/MegaKite214/whatbox#readme",
+  "devDependencies": {
+    "electron": "~1.6.10"
+  }
+}

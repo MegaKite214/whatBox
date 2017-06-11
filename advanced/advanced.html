@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- Copyright (C) 2017 Toufukun -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Yet Another kite toolbox</title>
+    <link rel="stylesheet" href="advanced/main.css" />
+    <!-- <link rel="stylesheet/less" href="main.less" /> -->
+  </head>
+  <body>
+    <div id="initial-screen" class="screen">
+      <div class="top-tip">Drop file below or click</div>
+      <div class="entrance-panel">
+        <div class="entrance">
+          <div class="entrance-circle-outer">
+            <div id="btn-compress" class="entrance-circle-inner" onclick="test(this)">
+            </div>
+          </div>
+          <div class="entrance-text">
+            Compress / Info
+          </div>
+        </div>
+        <div class="entrance">
+          <div class="entrance-circle-outer">
+            <div class="entrance-circle-inner">
+            </div>
+          </div>
+          <div class="entrance-text">
+            Extract
+          </div>
+        </div>
+        <div class="entrance">
+          <div class="entrance-circle-outer">
+            <div class="entrance-circle-inner">
+            </div>
+          </div>
+          <div class="entrance-text">
+            Package
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="compress-screen" class="screen">
+      <div class="top-bar">
+        <div class="tab-group">
+          <div class="left active">Compress / Info</div>
+          <div class="middle">Extract</div>
+          <div class="right">Package</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="left-panel">
+          <div>
+            <h2>Compress</h2>
+          </div>
+          <div class="list filelist batch">
+            <div class="list-item">foo.mp4</div>
+            <div class="list-item">bar.mp4</div>
+            <div class="list-item">baz.mp4</div>
+          </div>
+          <div class="list mediainfo-lite">
+            <div class="list-item">
+              <div class="caps">AUDIO</div>
+              <div class="big">AAC@192kbps</div>
+            </div>
+            <div class="list-item">
+              <div class="caps">VIDEO</div>
+              <div class="big">H.264@1000kbps</div>
+              <div>High profile, 4.1</div>
+            </div>
+          </div>
+          <div class="bottom-bar">
+            <div class="option">Batch Mode</div>
+            <button>+</button>
+          </div>
+        </div>
+        <div class="settings">
+          <div class="settings-container">
+          <table>
+            <tr class="sub">
+              <td colspan="2">VIDEO</td>
+            </tr>
+            <tr class="white">
+              <td>Preset</td>
+              <td class="right">
+                <select size="1">
+                  <option>Graphics</option>
+                  <option>Animation</option>
+                  <option>Movie / Video</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="white">
+              <td>Bitrate Mode</td>
+              <td class="right option-group">
+                <div class="option active">Smart CRF</div>
+                <div class="option">CRF</div>
+                <div class="option active">ABR</div>
+              </td>
+            </tr>
+            <tr class="white">
+              <td>Target Bitrate</td>
+              <td class="right middle">
+                <button>&minus;</button>
+                <div><span class="big">1000</span> kbps</div>
+                <button>&plus;</button>
+              </td>
+            </tr>
+            <tr class="white no-border">
+              <td>Performance</td>
+              <td class="right middle option-group">
+                <div class="option active">Auto</div>
+                <div class="option">Custom</div>
+              </td>
+            </tr>
+            <tr class="white">
+              <td></td>
+              <td class="right middle no-wrap">
+                <div>Speed</div>
+                <input type="range" />
+                <div>Quality</div>
+              </td>
+            </tr>
+            <tr class="sub">
+              <td colspan="2">AUDIO</td>
+            </tr>
+            <tr class="white">
+              <td>Audio Mode</td>
+              <td class="right middle option-group">
+                <div class="option active">ABR</div>
+                <div class="option">CBR</div>
+              </td>
+            </tr>
+            <tr class="white">
+              <td>Audio Bitrate</td>
+              <td class="right middle no-wrap">
+                <button>&minus;</button>
+                <div><span class="big">192</span> kbps</div>
+                <button>&plus;</button>
+              </td>
+            </tr>
+          </table>
+          </div>
+          <div class="bottom-right">
+            <div id="update-tip" class="auto-hide">Presets are up to date. <button>Check Update</button></div>
+            <button class="primary big">Compress</button>
+          </div>
+          <!-- <div class="settings-item">
+            <div>Bitrate Mode</div>
+            <div class="right">
+              <div>Smart CRF</div>
+              <div>CRF</div>
+              <div>ABR</div>
+            </div>
+          </div>
+          <div class="settings-item">
+            <div>Target Bitrate</div>
+            <div class="right">
+              <div>-</div>
+              <div><span class="big">1000</span>kbps</div>
+              <div>+</div>
+            </div>
+          </div>
+          <div class="settings-item">
+            <div>Performance</div>
+            <div class="right">
+              <span>Speed</span><input type="range" /><span>Quality</span>
+              <div></div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function test(e){
+      let newSize = (window.innerWidth>window.innerHeight?window.innerWidth:window.innerHeight)*2;
+      let oldSize = e.getBoundingClientRect().width;
+      //let newSize = 196;
+      console.log(oldSize);
+      e.style.width=newSize+'px';
+      e.style.height=newSize+'px';
+      e.style.top=-1*(newSize-oldSize)/2+'px';
+      e.style.left=-1*(newSize-oldSize)/2+'px';
+      e.style.borderRadius=newSize/2+'px';
+      e.style.opacity=1;
+    }
+  </script>
+
+</html>

@@ -1,0 +1,309 @@
+html {
+  font-size: 12px;
+}
+body {
+  font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', Roboto, sans-serif;
+  margin: 0px;
+  overflow: hidden;
+}
+.screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#initial-screen {
+  background-color: #39BE87;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /*visibility: hidden;*/
+}
+#initial-screen .top-tip {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+#initial-screen .entrance-panel {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#initial-screen .entrance-panel .entrance {
+  flex: 1;
+  text-align: center;
+}
+#initial-screen .entrance-panel .entrance .entrance-circle-outer {
+  width: 96px;
+  height: 96px;
+  border-radius: 48px;
+  border: white 2px dashed;
+  margin: auto;
+  overflow: visible;
+  box-sizing: border-box;
+  transition: border 0.5s linear;
+}
+#initial-screen .entrance-panel .entrance .entrance-circle-outer:hover {
+  border-style: solid;
+}
+#initial-screen .entrance-panel .entrance .entrance-circle-outer .entrance-circle-inner {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  width: 94px;
+  height: 94px;
+  box-sizing: content-box;
+  border-radius: 47px;
+  background-color: white;
+  opacity: 0.3;
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.1, 1), top 0.5s cubic-bezier(0.9, 0, 1, 1), left 0.5s cubic-bezier(0.9, 0, 1, 1), width 0.5s cubic-bezier(0.9, 0, 1, 1), height 0.5s cubic-bezier(0.9, 0, 1, 1);
+}
+#initial-screen .entrance-panel .entrance .entrance-circle-outer .entrance-circle-inner:hover {
+  opacity: 1;
+}
+#initial-screen .entrance-panel .entrance .entrance-text {
+  margin-top: 1rem;
+  font-size: 1.16666667rem;
+  display: block;
+}
+#compress-screen {
+  color: black;
+  display: flex;
+  overflow: visible;
+  flex-direction: column;
+}
+#compress-screen .container {
+  flex: 1;
+  min-width: 24px;
+  display: flex;
+  flex-direction: row;
+}
+#compress-screen .container .left-panel {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #CCC;
+  flex: 4;
+}
+#compress-screen .container .left-panel h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  padding: 1rem 0em .5rem 1rem;
+  margin: 0px;
+  border-bottom: 1px solid #CCC;
+}
+#compress-screen .container .left-panel .filelist {
+  margin-top: -1px;
+  margin-left: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#compress-screen .container .left-panel .filelist.batch {
+  flex: 1;
+}
+#compress-screen .container .left-panel .filelist.single {
+  height: 3rem;
+}
+#compress-screen .container .left-panel .filelist .list-item {
+  height: 3rem;
+  line-height: 3rem;
+  padding-left: 1rem;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: -1px;
+}
+#compress-screen .container .left-panel .mediainfo-lite {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  border-bottom: 1px solid #CCC;
+  -webkit-overflow-scrolling: touch;
+}
+#compress-screen .container .left-panel .mediainfo-lite .list-item {
+  min-height: 3rem;
+  padding: .5rem 1rem;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: -1px;
+}
+#compress-screen .container .left-panel .mediainfo-lite .list-item .caps {
+  font-weight: 500;
+  font-size: .8rem;
+}
+#compress-screen .container .left-panel .mediainfo-lite .list-item .big {
+  font-size: 2rem;
+  font-weight: 300;
+}
+#compress-screen .container .left-panel .bottom-bar {
+  min-height: 2rem;
+  padding: .5rem .5rem;
+}
+#compress-screen .container .left-panel .bottom-bar div {
+  display: inline-block;
+}
+#compress-screen .container .left-panel .bottom-bar .option {
+  padding: .25em .5em;
+  border-radius: 4px;
+}
+#compress-screen .container .left-panel .bottom-bar .option.active {
+  background-color: #39BE87;
+  color: white;
+}
+#compress-screen .container .left-panel .bottom-bar button {
+  float: right;
+}
+#compress-screen .container .settings {
+  flex: 6;
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #e6e6e6;
+}
+#compress-screen .container .settings table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#compress-screen .container .settings table tr {
+  height: 3rem;
+  border-bottom: 1px solid #CCC;
+}
+#compress-screen .container .settings table tr.white {
+  background-color: white;
+}
+#compress-screen .container .settings table tr.no-border {
+  border-bottom: 0px;
+}
+#compress-screen .container .settings table tr.sub {
+  height: auto;
+  font-weight: 500;
+}
+#compress-screen .container .settings table tr.sub td {
+  padding-top: 2rem;
+  padding-bottom: .5rem;
+}
+#compress-screen .container .settings table td {
+  padding: 0rem 1rem;
+}
+#compress-screen .container .settings table td.right {
+  text-align: right;
+}
+#compress-screen .container .settings table td div {
+  display: inline-block;
+}
+#compress-screen .container .settings table input[type="range"] {
+  width: 40%;
+  min-width: 2em;
+  max-width: 8em;
+}
+#compress-screen .container .settings table .no-wrap {
+  white-space: nowrap;
+}
+#compress-screen .container .settings table .option-group {
+  padding-right: .5rem;
+}
+#compress-screen .container .settings table .option {
+  padding: .25em .5em;
+  border-radius: 4px;
+}
+#compress-screen .container .settings table .option.active {
+  background-color: #39BE87;
+  color: white;
+}
+#compress-screen .container .settings .settings-container {
+  flex: 1;
+}
+#compress-screen .container .settings .bottom-right {
+  padding: 1rem;
+  text-align: right;
+  display: flex;
+  align-items: center;
+}
+#compress-screen .container .settings .bottom-right div {
+  flex: 1;
+  margin-right: 1rem;
+}
+#compress-screen .container .settings .bottom-right div.auto-hide {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+#compress-screen .container .settings .bottom-right div.auto-hide:hover {
+  opacity: 1;
+}
+#compress-screen .container .settings span.big {
+  font-size: 2rem;
+  font-weight: 300;
+  vertical-align: baseline;
+}
+#compress-screen .container .settings .middle,
+#compress-screen .container .settings .middle * {
+  vertical-align: middle;
+}
+button {
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #DDD;
+  border: 0px;
+  border-bottom: 1px #999 solid;
+  min-height: 1.5rem;
+  display: inline-block;
+  font-weight: 500;
+}
+button:active {
+  color: white;
+  background-color: #999;
+}
+button.primary {
+  border: 0px;
+  background-color: #39BE87;
+  border-bottom: 1px #21704f solid;
+}
+button.primary.big {
+  border-bottom: 2px #21704f solid;
+}
+button.primary:active {
+  background-color: #21704f;
+}
+button.big {
+  font-weight: 400;
+  font-size: 1.5rem;
+  min-height: 3rem;
+  border-bottom: 2px #AAA solid;
+  color: white;
+}
+.top-bar {
+  background-color: #e6e6e6;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid #CCC;
+}
+.top-bar .tab-group {
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+}
+.top-bar .tab-group div {
+  border: 0.5px solid #CCC;
+  background-color: white;
+  padding: .25rem .5rem;
+  margin-right: -1px;
+}
+.top-bar .tab-group div.active {
+  background-color: #666;
+  color: white;
+  border: 0.5px solid #666;
+}
+.top-bar .tab-group div.left {
+  border-radius: 4px 0px 0px 4px;
+}
+.top-bar .tab-group div.right {
+  border-radius: 0px 4px 4px 0px;
+  margin-right: 0px;
+}
