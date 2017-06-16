@@ -9,13 +9,15 @@ $.__proto__.sel = (element) => {
 }
 
 $.__proto__.get = (url,callback) => {
-    let x = new XMLHttpRequest();
-    x.onreadystatechange = () => {
-    if (x.readyState==4 && x.status==200) 
-       callback(x.responseText);
-    }
-    x.open('GET',url,true);
-    x.send();
+    // let x = new XMLHttpRequest();
+    // x.onreadystatechange = () => {
+    // if (x.readyState==4 && x.status==200) 
+    //    callback(x.responseText);
+    // }
+    // x.open('GET',url,true);
+    // x.send();
+
+    fetch(url).then(callback);
 }
 
 $.__proto__.load = (sel,url) => {
