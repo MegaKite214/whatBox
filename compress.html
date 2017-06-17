@@ -2,5 +2,21 @@
 
 </script>
 
-<input class="mdl-slider mdl-js-slider" type="range"
-     min="0" max="100" value="0" tabindex="0">
+<div class="fn-bar">
+    <a id="setting-button"></a>
+</div>
+
+<div id="compress-container" style="margin: 5px">
+    <div id="test"></div>
+</div>
+
+
+<script>
+    noUiSlider.create($('#test'), {
+        start: [4000, 8000],
+        range: {
+            'min': [2000],
+            'max': [10000]
+        }
+    });
+</script>
