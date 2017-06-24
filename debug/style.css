@@ -1,0 +1,71 @@
+body {
+    background-color: lightblue;
+    font-family: "DIN Pro", "Source Han Sans Regular";
+    animation: blur 500ms ease-in-out;
+}
+
+#tip {
+    display: block;
+    color: white;
+    background-color: palevioletred;
+}
+
+p {
+    margin: 5px;
+}
+
+#tip p#title {
+    text-align: center;
+}
+
+@keyframes blur {
+    from {
+        filter: blur(50px);
+    }
+    to {
+        filter: blur(0px);
+    }
+}
+
+.info {
+    
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.info-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: block;
+    margin: -5px;
+    margin-bottom: 5px;
+    padding: 0 6px;
+    
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+    height: 5px;
+} 
+
+::-webkit-scrollbar-track {
+    background-color: lightblue
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+::-webkit-scrollbar-button {
+    display: hidden;
+}
+
+::-webkit-scrollbar-corner {
+    display: hidden;
+}

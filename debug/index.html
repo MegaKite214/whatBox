@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>whatBox Debugger</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../xd.js"></script>
+    <link rel="stylesheet" href="styles/highlight.css">
+    <script src="highlight.pack.js"></script>
+
+    <script>
+        const { dialog } = require('electron').remote;
+
+        const dialogOption = {
+            title: "选择一个文件 - whatBox",
+            filters: [
+                { name: 'MPEG-4', extensions: ['mp4'] },
+                { name: '全部文件', extensions: ['*'] }
+            ]
+        };
+
+        $.fin(() => {
+            $('#info-btn').addEventListener("click",
+                () => {
+                    let choice = dialog.showOpenDialog(dialogOption);
+                    if (choice === undefined) return;
+
+                    let i = new (require("../toolchain/Cible.js"))(choice[0]);
+                    i.load();
+                    $("#q1").innerHTML = "选择的文件: " + choice[0];
+                    $("#info-text").innerHTML = JSON.stringify(i.getInfo(),null,'  ');
+                    hljs.highlightBlock($('#info-text'));
+                }, false);
+
+            $.click('#clear-logs',() => {
+                $.sel('*[id$="-text"]').forEach(o => o.innerHTML = null);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <span id="tip">
+            <p id="title">whatBox 调试模式</p>
+            <p>&nbsp;&nbsp;此处的内容随时可能变化、替换或被删除，且这些内容是为开发者调试而准备的。whatBox 不对此窗口内的任何内容进行担保。</p>
+    </span>
+    <div class="info">
+        <span class="info-title">Global</span>
+    <button id="clear-logs">Clear all logs</button>
+    </div>
+
+    <div class="info">
+        <span class="info-title">Video Infomation (Built-in mp4box)</span>
+        <p id="q1">选择一个文件并继续</p>
+        <button id="info-btn">选择...</button> 
+        <pre><code class="json" id="info-text"></code></pre>
+    </div>
+</body>
+
+</html>

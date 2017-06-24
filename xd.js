@@ -29,28 +29,23 @@ $.__proto__.click = (selected,act) => {
     $.sel(selected).forEach((obj) => { obj.onclick = () => act(obj) });
 }
 
-$.__proto__.__priv = {
-    ready: false,
-    ready_fns: [],
-    ldr_fns: []
-};
-
-$.__proto__.fin = (fn) => {
-    if($.__priv.ready) $.__priv._ready_fns.push(fn);
-    else fn();
+$.__proto__.loaded = (fn) => {
+    return new Promise((resolve) => {
+        resolve();
+    });
 }
 
 
-window.onload = () => {
-    console.log("pong!");
-    $.__priv.ready = true;
+$.__proto__.fin = (fn) => {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+$.fin(() => {
     $.sel("include").forEach((o) => {
         $.get(o.getAttribute("href")).then(dat => o.innerHTML = dat);
     });
-    console.log($.__priv._ready_fns);
-    for(f in $.__priv._ready_fns){
-        console.log(f);
-        $.__priv._ready_fns[f]();
-    }
-    
-}
+});

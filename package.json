@@ -4,8 +4,8 @@
   "description": "Open-Source A/V encoding toolbox",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "test": "electron ./debug"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/MegaKite214/whatbox#readme",
   "devDependencies": {
     "electron": "~1.6.10"
+  },
+  "dependencies": {
+    "mp4box": "^0.3.15"
   }
 }
