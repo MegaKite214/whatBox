@@ -4,7 +4,7 @@
     background-color: #39BE87;
     width: 100%;
     height: 100%;
-    color:white;
+    color: white;
     position: fixed;
 }
 
@@ -14,8 +14,8 @@ body {
     overflow: hidden;
 
     /* Make sure there are always best sans Chinese fonts*/
-    font-family: "Source Han Sans"/*,*/, sans-serif;
-    user-select: none; 
+    font-family: "Source Han Sans SC"/*,*/, sans-serif;
+    user-select: none;
 }
 
 #drop-container {
@@ -59,6 +59,7 @@ body {
     fill-opacity: 0.15;
     stroke-opacity: 0.8;
     stroke: white;
+    stroke-linecap: round;
     stroke-width: 2.5px;
     stroke-dasharray: 10px;
     cx: 65;
@@ -69,7 +70,7 @@ body {
 .svg-circle circle:hover {
     stroke-dasharray: 0px;
     stroke-opacity: 1;
-    animation: fill 250ms cubic-bezier(0.4,0,0.6,1);
+    animation: fill 200ms cubic-bezier(0.4,0,0.6,1);
 }
 
 #setting-button {
@@ -81,7 +82,7 @@ body {
     height: 50px;
     display: block;
     float: right;
-    animation: opacity 1.2s cubic-bezier(1,.00,.05,.30);
+    animation: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes opacity {
@@ -96,19 +97,19 @@ body {
 
 #compress-container {
     background-color: #F0F0F0;
-    height: 100%;
+    height: 90%;
     margin-top: 50px;
 }
 
 @keyframes fill {
     from {
         stroke-dasharray: 10px;
-        stroke-opacity: 1;
+        stroke-opacity: 0.8;
     }
 
     to {
         stroke-dasharray: 0px;
-        stroke-opacity: 0.8;
+        stroke-opacity: 1;
     }
 }
 
@@ -118,12 +119,12 @@ body {
     width: 100%;
     height: 50px;
     background-color: /*#39BE87*/#39BE87;
-    animation: collapse 800ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: collapse 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes collapse {
     from {
-        height: 100%;
+        height: 250px;
     }
 
     to {

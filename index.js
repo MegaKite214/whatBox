@@ -1,4 +1,4 @@
-const elec = require('electron'); 
+const elec = require('electron');
 const app = elec.app;
 const ipc = elec.ipcMain;
 const BrowserWindow = elec.BrowserWindow;
@@ -6,9 +6,9 @@ const BrowserWindow = elec.BrowserWindow;
 var createWindow = function(){
 
     mainWindow = new BrowserWindow({
-    width: 550, 
-    height: 280, 
-    //resizable: false, 
+    width: 550,
+    height: 280,
+    //resizable: false,
     maximizable: false,
     fullscreenable: false,
     fullscreen: false,

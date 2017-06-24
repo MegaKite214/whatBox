@@ -1,6 +1,6 @@
 body {
     background-color: lightblue;
-    font-family: "DIN Pro", "Source Han Sans Regular";
+    font-family: "DIN Pro", "Source Han Sans SC";
     animation: blur 500ms ease-in-out;
 }
 
@@ -28,7 +28,7 @@ p {
 }
 
 .info {
-    
+
     background: rgba(0, 0, 0, 0.1);
     margin-top: 5px;
     margin-bottom: 5px;
@@ -42,13 +42,13 @@ p {
     margin: -5px;
     margin-bottom: 5px;
     padding: 0 6px;
-    
+
 }
 
 ::-webkit-scrollbar {
 	width: 5px;
     height: 5px;
-} 
+}
 
 ::-webkit-scrollbar-track {
     background-color: lightblue
