@@ -19,7 +19,7 @@ body {
 }
 
 #drop-container {
-    margin: 20px auto;
+    margin: 50px auto;
     text-align: center;
     display: table;
 }
@@ -27,6 +27,7 @@ body {
 .drop-item {
     font-size: 24px;
     font-weight: normal;
+    line-height: 16px;
 
     float: none;
     display: inline-block;
@@ -49,8 +50,8 @@ body {
 }
 
 .svg-circle {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -62,16 +63,16 @@ body {
     stroke: white;
     stroke-linecap: round;
     stroke-width: 2.5px;
-    stroke-dasharray: 9.83px;
-    cx: 65;
-    cy: 65;
-    r: 63;
+    stroke-dasharray: 9.7px;
+    cx: 70;
+    cy: 70;
+    r: 65;
 }
 
 .svg-circle circle:hover {
     stroke-dasharray: 0px;
     stroke-opacity: 1;
-    animation: dashfill 150ms cubic-bezier(0.4,0,0.6,1);
+    animation: dash-fill 200ms cubic-bezier(0.4,0,0.6,1);
 }
 
 #setting-button{
@@ -79,15 +80,14 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 18px;
-    fill: #FFF;
     width: 50px;
     height: 50px;
     display: block;
     float: right;
-    animation: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: opacity-0to1 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes opacity {
+@keyframes opacity-0to1 {
     from {
         opacity: 0;
     }
@@ -103,7 +103,7 @@ body {
     margin-top: 50px;
 }
 
-@keyframes dashfill {
+@keyframes dash-fill {
     from {
         stroke-dasharray: 9.85px;
         stroke-opacity: 0.8;
@@ -121,7 +121,7 @@ body {
     width: 100%;
     height: 50px;
     background-color: /*#39BE87*/#39BE87;
-    animation: collapse 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: collapse 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes collapse {
