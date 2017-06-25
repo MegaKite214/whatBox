@@ -8,7 +8,7 @@ var createWindow = function(){
     mainWindow = new BrowserWindow({
     width: 550,
     height: 280,
-    //resizable: false,
+    resizable: false,
     maximizable: false,
     fullscreenable: false,
     fullscreen: false,

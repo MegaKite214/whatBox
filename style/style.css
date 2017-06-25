@@ -6,6 +6,7 @@
     height: 100%;
     color: white;
     position: fixed;
+    -webkit-app-region: drag;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     display: table;
 }
 
-.drop-item{
+.drop-item {
     font-size: 24px;
     font-weight: normal;
 
@@ -36,20 +37,21 @@ body {
 }
 
 .svg-circle#compress {
-    background-image: url("../asset/icon/compress.png");
+    background-image: url("../asset/icon/compress.svg");
 }
 
 .svg-circle#extract {
-    background-image: url("../asset/icon/extract.png");
+    background-image: url("../asset/icon/extract.svg");
 }
 
 .svg-circle#mux {
-    background-image: url("../asset/icon/mux.png");
+    background-image: url("../asset/icon/mux.svg");
+    transform: rotate(180deg);
 }
 
 .svg-circle {
     width: 130px;
-    height:130px;
+    height: 130px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -61,31 +63,32 @@ body {
     stroke: white;
     stroke-linecap: round;
     stroke-width: 2.5px;
-    stroke-dasharray: 10px;
+    stroke-dasharray: 9.83px;
     cx: 65;
     cy: 65;
-    r: 64;
+    r: 63;
 }
 
 .svg-circle circle:hover {
     stroke-dasharray: 0px;
     stroke-opacity: 1;
-    animation: fill 200ms cubic-bezier(0.4,0,0.6,1);
+    animation: dashFill 150ms cubic-bezier(0.4,0,0.6,1);
 }
 
-#setting-button {
-    background-image: url('../asset/icon/settings.png');
+#setting-button{
+    background-image: url('../asset/icon/settings.svg');
     background-repeat: no-repeat;
     background-position: center;
-    filter: invert(); /* Black button sucks ,fuck u */
+    fill: #FFF;
+    transform: scale(0.75,0.75);
     width: 50px;
     height: 50px;
     display: block;
     float: right;
-    animation: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: opacity_0to100 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes opacity {
+@keyframes opacity_0to100 {
     from {
         opacity: 0;
     }
@@ -101,9 +104,9 @@ body {
     margin-top: 50px;
 }
 
-@keyframes fill {
+@keyframes dashFill {
     from {
-        stroke-dasharray: 10px;
+        stroke-dasharray: 9.85px;
         stroke-opacity: 0.8;
     }
 
@@ -119,12 +122,12 @@ body {
     width: 100%;
     height: 50px;
     background-color: /*#39BE87*/#39BE87;
-    animation: collapse 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: collapse 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes collapse {
     from {
-        height: 250px;
+        height: 100%;
     }
 
     to {
